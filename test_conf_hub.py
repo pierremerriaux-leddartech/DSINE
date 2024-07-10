@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import sys
 
-normal_predictor = torch.hub.load("/home/merriaux/project/external_repos/DSINE", "DSINE", trust_repo=True, source='local')
+normal_predictor = torch.hub.load("pierremerriaux-leddartech/DSINE", "DSINE", trust_repo=True, source='github')
 
 image = cv2.imread('projects/dsine/samples/img/office_01.png', cv2.IMREAD_COLOR)
 h, w = image.shape[:2]
