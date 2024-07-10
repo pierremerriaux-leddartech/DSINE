@@ -64,7 +64,8 @@ def DSINE(local_file_path: Optional[str] = None):
     import projects.dsine.config as config
     import sys
     old_sys_argv = sys.argv
-    sys.argv = [old_sys_argv[0]] + ['projects/dsine/experiments/exp001_cvpr2024/dsine.txt']
+    sys.argv = [old_sys_argv[0]] + [os.path.join(os.path.dirname(os.path.realpath(__file__)), 'projects/dsine/experiments/exp001_cvpr2024/dsine.txt')]
+
     args = config.get_args(test=True)
     #args.exp_root = os.path.join(os.path.split(os.path.dirname(os.path.realpath(__file__)))[0], 'experiments')
     state_dict = _load_state_dict(local_file_path)
